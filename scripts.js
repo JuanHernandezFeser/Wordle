@@ -752,7 +752,7 @@ var nuevoJuego = document.getElementById("nuevoJuego");
 nuevoJuego.onclick = nuevaPartida;
 
 
-var arregloPalabras = ["messi", "autos", "pista", "cerra", "pasta", "sexos"];
+var arregloPalabras = ["PISTA","PASTA","CESTO","CERRO","CARPA","MIEDO","MESSI","RIEGO","SUEÑO","FUEGO","TEXTO","PEDIR","COMER","MEDIA","HASTA","GORDO","ABAJO"];
 
 var vidas;
 
