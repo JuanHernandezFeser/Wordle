@@ -6,60 +6,20 @@ function nuevaPartida() {
 
     alert("Nuevo juego comenzado, buena suerte!");
 
-    p1l1.value = "";
-    p1l2.value = "";
-    p1l3.value = "";
-    p1l4.value = "";
-    p1l5.value = "";
-    p1l1.style.backgroundColor="inherit";
-    p1l2.style.backgroundColor="inherit";
-    p1l3.style.backgroundColor="inherit";
-    p1l4.style.backgroundColor="inherit";
-    p1l5.style.backgroundColor="inherit";
+    resetearPalabras(p1l1, p1l2, p1l3, p1l4, p1l5);
+    resetearColores(p1l1, p1l2, p1l3, p1l4, p1l5);
 
-    p2l1.value = "";
-    p2l2.value = "";
-    p2l3.value = "";
-    p2l4.value = "";
-    p2l5.value = "";
-    p2l1.style.backgroundColor="inherit";
-    p2l2.style.backgroundColor="inherit";
-    p2l3.style.backgroundColor="inherit";
-    p2l4.style.backgroundColor="inherit";
-    p2l5.style.backgroundColor="inherit";
+    resetearPalabras(p2l1, p2l2, p2l3, p2l4, p2l5);
+    resetearColores(p2l1, p2l2, p2l3, p2l4, p2l5);
 
-    p3l1.value = "";
-    p3l2.value = "";
-    p3l3.value = "";
-    p3l4.value = "";
-    p3l5.value = "";
-    p3l1.style.backgroundColor="inherit";
-    p3l2.style.backgroundColor="inherit";
-    p3l3.style.backgroundColor="inherit";
-    p3l4.style.backgroundColor="inherit";
-    p3l5.style.backgroundColor="inherit";
+    resetearPalabras(p3l1, p3l2, p3l3, p3l4, p3l5);
+    resetearColores(p3l1, p3l2, p3l3, p3l4, p3l5);
 
-    p4l1.value = "";
-    p4l2.value = "";
-    p4l3.value = "";
-    p4l4.value = "";
-    p4l5.value = "";
-    p4l1.style.backgroundColor="inherit";
-    p4l2.style.backgroundColor="inherit";
-    p4l3.style.backgroundColor="inherit";
-    p4l4.style.backgroundColor="inherit";
-    p4l5.style.backgroundColor="inherit";
+    resetearPalabras(p4l1, p4l2, p4l3, p4l4, p4l5);
+    resetearColores(p4l1, p4l2, p4l3, p4l4, p4l5);
 
-    p5l1.value = "";
-    p5l2.value = "";
-    p5l3.value = "";
-    p5l4.value = "";
-    p5l5.value = "";
-    p5l1.style.backgroundColor="inherit";
-    p5l2.style.backgroundColor="inherit";
-    p5l3.style.backgroundColor="inherit";
-    p5l4.style.backgroundColor="inherit";
-    p5l5.style.backgroundColor="inherit";
+    resetearPalabras(p5l1, p5l2, p5l3, p5l4, p5l5);
+    resetearColores(p5l1, p5l2, p5l3, p5l4, p5l5);
 
     console.log(palabra);
 }
@@ -68,23 +28,23 @@ function mostrarLetras(letra) {
     if (esLetra(letra.keyCode)) {
         switch (vidas) {
             case 5: {
-                setIfElse(p1l1, p1l2, p1l3, p1l4, p1l5,letra);
+                setIfElse(p1l1, p1l2, p1l3, p1l4, p1l5, letra);
                 break;
             }
             case 4: {
-                setIfElse(p2l1, p2l2, p2l3, p2l4, p2l5,letra);
+                setIfElse(p2l1, p2l2, p2l3, p2l4, p2l5, letra);
                 break;
             }
             case 3: {
-                setIfElse(p3l1, p3l2, p3l3, p3l4, p3l5,letra);
+                setIfElse(p3l1, p3l2, p3l3, p3l4, p3l5, letra);
                 break;
             }
             case 2: {
-                setIfElse(p4l1, p4l2, p4l3, p4l4, p4l5,letra);
+                setIfElse(p4l1, p4l2, p4l3, p4l4, p4l5, letra);
                 break;
             }
             case 1: {
-                setIfElse(p5l1, p5l2, p5l3, p5l4, p5l5,letra);
+                setIfElse(p5l1, p5l2, p5l3, p5l4, p5l5, letra);
                 break;
             }
         }
@@ -195,9 +155,10 @@ function borrarLetras() {
     }
 }
 
-function setIfElse(p1, p2, p3, p4, p5,letra) {
-    if (p1.value == "")
+function setIfElse(p1, p2, p3, p4, p5, letra) {
+    if (p1.value == ""){
         p1.value = letra.key;
+    }
     else
         if (p2.value == "")
             p2.value = letra.key;
@@ -217,27 +178,27 @@ function crearPalabra() {
     switch (vidas) {
         case 5: {
             palabra = palabra + p1l1.value + p1l2.value + p1l3.value + p1l4.value + p1l5.value;
-            palabra=palabra.toUpperCase();
+            palabra = palabra.toUpperCase();
             break;
         }
         case 4: {
             palabra = palabra + p2l1.value + p2l2.value + p2l3.value + p2l4.value + p2l5.value;
-            palabra=palabra.toUpperCase();
+            palabra = palabra.toUpperCase();
             break;
         }
         case 3: {
             palabra = palabra + p3l1.value + p3l2.value + p3l3.value + p3l4.value + p3l5.value;
-            palabra=palabra.toUpperCase();
+            palabra = palabra.toUpperCase();
             break;
         }
         case 2: {
             palabra = palabra + p4l1.value + p4l2.value + p4l3.value + p4l4.value + p4l5.value;
-            palabra=palabra.toUpperCase();
+            palabra = palabra.toUpperCase();
             break;
         }
         case 1: {
             palabra = palabra + p5l1.value + p5l2.value + p5l3.value + p5l4.value + p5l5.value;
-            palabra=palabra.toUpperCase();
+            palabra = palabra.toUpperCase();
             break;
         }
     }
@@ -725,6 +686,28 @@ function colorearPalabra(palabra) {
             break;
         }
     }
+}
+
+function resetearPalabras(p1, p2, p3, p4, p5) {
+    p1.value = "";
+    p2.value = "";
+    p3.value = "";
+    p4.value = "";
+    p5.value = "";
+}
+
+function resetearColores(p1, p2, p3, p4, p5) {
+    p1.style.backgroundColor = "inherit";
+    p2.style.backgroundColor = "inherit";
+    p3.style.backgroundColor = "inherit";
+    p4.style.backgroundColor = "inherit";
+    p5.style.backgroundColor = "inherit";
+
+    p1.style.color="black";
+    p2.style.color="black";
+    p3.style.color="black";
+    p4.style.color="black";
+    p5.style.color="black";
 }
 
 var ingresarPalabra = document.getElementById("ingresarPalabra");
